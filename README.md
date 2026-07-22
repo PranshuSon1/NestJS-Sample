@@ -2,6 +2,8 @@
 
 Welcome to the **NestJS Learning Guide** built on top of this sample project! This guide is designed to help you master NestJS, its architecture, design patterns, and core concepts.
 
+> 📚 **Interview Preparation**: Looking for common technical interview questions? Check out our dedicated [INTERVIEW_QUESTIONS.md](file:///c:/Users/Programming.com/Projects/NestJS-Sample/INTERVIEW_QUESTIONS.md) guide!
+
 ---
 
 ## Table of Contents
