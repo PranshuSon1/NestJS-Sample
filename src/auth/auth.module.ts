@@ -7,21 +7,28 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtStrategy } from './jwt.strategy';
 
+/**
+ * AuthModule:
+ * Organizes authentication components and configures JWT token creation and Passport integration.
+ */
 @Module({
   imports: [
     ConfigModule,
-    UsersModule,
+    UsersModule, // Import UsersModule to inject UsersService into AuthService & JwtStrategy
     PassportModule,
+
+    // JwtModule.registerAsync: Asynchronously registers JwtService with dynamic config from ConfigService
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
         secret: configService.get<string>('JWT_SECRET', 'topSecret51'),
-        signOptions: { expiresIn: '1h' },
+        signOptions: { expiresIn: '1h' }, // JWT tokens expire in 1 hour
       }),
     }),
   ],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy], // Register AuthService and Passport JwtStrategy as providers
   controllers: [AuthController],
 })
 export class AuthModule {}
+
