@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nest start",
     "start:dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "dev": "npm run start:dev",
     "build": "tsc -p tsconfig.build.json",
     "lint": "eslint '{src,test}/**/*.ts' --fix"
   },
@@ -15,6 +16,7 @@
     "@nestjs/jwt": "^10.0.0",
     "@nestjs/mongoose": "^10.0.0",
     "@nestjs/passport": "^10.0.0",
+    "@nestjs/platform-express": "^10.4.22",
     "bcrypt": "^5.1.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
